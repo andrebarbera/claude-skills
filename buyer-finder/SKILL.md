@@ -46,6 +46,15 @@ Skip a post straight away if it's:
 - the founder of a competitor
 - older than 7 days
 
+## Lead quality (check every account before scoring)
+
+Only keep people a founder would be glad to hear about:
+- a real person or company, posting in English, active this month
+- an account older than 6 months with a real following for its niche (usually 300+; drop anything that looks like a bot, a job board, a giveaway or crypto spam)
+- the post itself is genuinely about needing what the product does
+
+If nobody passes, say so. Never pad the list with weak accounts.
+
 ## Step 4: score every post, 0 to 100
 
 | What | Points |
