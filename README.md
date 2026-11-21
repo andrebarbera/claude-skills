@@ -2,6 +2,18 @@
 
 free claude skills for builders who need users, by [@andrebarbera_](https://x.com/andrebarbera_)
 
+## first-customers
+
+gets you your first paying customers, mainly from X. checks your product fits what you're known for, researches your buyers in their own words, writes your offer and price, finds the people with the problem right now, drafts the reply and DM for each, plans your posts, follow-ups, referrals and a 30-minute daily routine
+
+**install**
+
+1. download [`first-customers/SKILL.md`](first-customers/SKILL.md)
+2. put it in `~/.claude/skills/first-customers/SKILL.md`
+3. open claude code and say "get me my first customers for" + your product link + your X handle
+
+it never posts or DMs for you. you read everything and send it yourself
+
 ## buyer-finder
 
 finds people on X asking for what you built, scores them for buying intent and writes a reply for each one
