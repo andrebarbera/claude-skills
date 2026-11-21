@@ -1,6 +1,6 @@
 ---
 name: first-customers
-description: Gets a builder their first paying customers, mainly from X, and sets up a conversation agent in their Claude that does the hard part every day. Give it your product (link or one line) and your X handle. It checks the product fits what you're known for, researches your buyers on X in their own words, writes the offer and price, then each day finds new people posting the problem and drafts the right message for where each one is: the comment, the free piece, the DM or the follow-up. Use when someone wants customers, users, buyers, sales or leads, asks "who would buy this", "how do I get my first users", or "how should I price this".
+description: Turns people on X into paying customers and sets up a sales agent in the user's Claude that does ~90% of the work every day: it sorts everyone who engages with their posts (hot / warm / cold) and drafts the DMs and follow-ups that convert them, and for small accounts it finds new people posting the problem and drafts the four-move outreach. Give it your product (link or one line) and your X handle. It checks the product fits what you're known for, researches your buyers on X in their own words, writes the offer and price, then each day finds new people posting the problem and drafts the right message for where each one is: the comment, the free piece, the DM or the follow-up. Use when someone wants customers, users, buyers, sales or leads, asks "who would buy this", "how do I get my first users", or "how should I price this".
 ---
 
 # First customers
@@ -57,8 +57,19 @@ Create a folder `customers/` in the user's working directory with:
 Offer the one-time setup that makes it run on its own: an X API Bearer Token (developer.x.com → app → Keys and tokens), saved with `export X_BEARER_TOKEN=...` in their shell profile. Without it the routine still works, it just needs them to open the search links.
 Tell the user: from now on, say **"run my customer routine"** every day.
 
+## Inbound mode: convert the people engaging with your posts (when the user says "work my replies" + a post link)
+1. Pull everyone who replied: `python3 <this skill folder>/scripts/xreplies.py <post link> 300` (needs X_BEARER_TOKEN; otherwise ask the user to paste the replies).
+2. Sort each person:
+   - HOT: asked a question, described their own problem, or said what they're building.
+   - WARM: commented the keyword / said thanks, real account, follows the user if known.
+   - COLD: emoji only, "following", bots, giveaway/crypto accounts.
+3. For HOT people, in order, draft a personal reply under their comment and a DM with four parts: what they said (one line), what the free thing already gives them, the one paid next step in one sentence, and a one-word-answer question. Answer the most common objection in the thread inside the DM. Offer a choice between two options (e.g. monthly or lifetime) instead of yes/no.
+4. For WARM people: one short DM after the free thing, then the day 2 / day 5 / day 10 follow-ups.
+5. Add everyone to `customers/leads.md` with their stage and the next message due. Speed matters: tell the user to send HOT messages within the hour while the post is live.
+6. After a no, draft one message asking what was missing, and log the answer as an objection in profile.md for future DMs.
+
 ## The daily customer routine (when the user says "run my customer routine")
-1. Read `customers/profile.md` and `customers/leads.md`.
+1. Read `customers/profile.md` and `customers/leads.md`. If the user posted in the last 48h, run inbound mode on those posts first (warm leads beat cold ones).
 2. Run the searches. Best: if `X_BEARER_TOKEN` is set, run `python3 <this skill folder>/scripts/xsearch.py "<search>" 25` for each search (fully automatic, ~$0.005 per post read on X's pay-per-use API). Otherwise browse x.com search with `&f=live` if you have a browser tool; as a last resort give the links and ask the user to paste new posts. Add new people who pass the filter below, scored 1-10 with the reason in their words.
 3. For every lead whose next message is due, draft the message for their stage, in the user's voice from the samples, about THEIR post and problem:
    - **Move 1, comment** (new lead): reply to their post with something useful on exactly what they said (a number, an example, the missing next step). No product, no link.
