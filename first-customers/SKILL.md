@@ -1,6 +1,6 @@
 ---
 name: first-customers
-description: Gets a builder their first paying customers, mainly from X. Give it your product (link or one line) and your X handle. It checks the product fits what you're known for, researches your buyers on X in their own words, writes a one-line offer and a price, finds the people posting the problem right now, drafts a reply and a DM for each, plans the posts that bring buyers to you, and gives you the follow-ups, the referral ask and a 30-minute daily routine. Use when someone wants customers, users, buyers, sales or leads, asks "who would buy this", "how do I get my first users", or "how should I price this".
+description: Gets a builder their first paying customers, mainly from X, and sets up a conversation agent in their Claude that does the hard part every day. Give it your product (link or one line) and your X handle. It checks the product fits what you're known for, researches your buyers on X in their own words, writes the offer and price, then each day finds new people posting the problem and drafts the right message for where each one is: the comment, the free piece, the DM or the follow-up. Use when someone wants customers, users, buyers, sales or leads, asks "who would buy this", "how do I get my first users", or "how should I price this".
 ---
 
 # First customers
@@ -46,39 +46,35 @@ Price it from the research:
 - If nobody pays for anything yet, start low and plan to raise the price every 10 customers.
 - Suggest one risk reversal (money back if X doesn't happen, a free first result, a free trial with a reminder before charging).
 
-## Step 4: the free proof
-Design one free thing that solves one small piece of the problem completely (a template, a checklist, a mini tool, a skill, one done-for-you result). Say what it is, how they'd deliver it, and how it leads to the paid product.
+## Step 4: the free piece
+Design one free thing that solves one small part of the problem completely (a template, a checklist, a short how-to, a mini tool, a skill). Write it out, or the outline the user can make in under an hour. It's what Move 2 sends, and it proves competence before any ask.
 
-## Step 5: the people to talk to now
-From the posts in step 2, list the people with the problem right now. Keep only:
-- Real people: real name or photo, not all links, account older than a few months, not a bot, job board, giveaway or crypto account.
-- Active this week.
-- Posts that are genuinely about the problem (not jokes, not people selling their own tool).
-Score each 1-10 for how ready they are to buy, with the reason in their words. Keep the best 5-10.
-For each, draft:
-- A public reply to their post: useful on exactly what they said, no product mention.
-- A DM for the next day: short, refers to their post, offers the free thing or the product, and can be answered with "yes".
-Every draft quotes or matches their exact words. Nothing they didn't say.
+## Step 5: set up the conversation agent
+Create a folder `customers/` in the user's working directory with:
+- `profile.md`: product, one-line offer, price, risk reversal, the free piece, the buyers' top phrases from step 2, who they are, and 5 samples of how the user writes (ask them to paste 5 of their own posts or replies).
+- `searches.md`: the 10 searches from step 2 as links.
+- `leads.md`: a table: handle · post link · their words · score 1-10 · stage (found / commented / free sent / DM sent / follow-up 1 / follow-up 2 / paid / referred / dead) · next message due · notes.
+Tell the user: from now on, say **"run my customer routine"** every day.
 
-## Step 6: posts that bring buyers to them
-Write 5 post ideas for this week, each in one of these shapes:
-- The problem in the buyers' exact words + what they get wrong about it.
-- A result (theirs or a customer's), with the real number.
-- The free thing, ending with a word to comment and "follow so i can dm you".
-Each post 1-6 short lines, plain words, no hype.
+## The daily customer routine (when the user says "run my customer routine")
+1. Read `customers/profile.md` and `customers/leads.md`.
+2. Run the searches (browse x.com search with `&f=live` if you can; otherwise give the links and ask the user to paste new posts). Add new people who pass the filter below, scored 1-10 with the reason in their words.
+3. For every lead whose next message is due, draft the message for their stage, in the user's voice from the samples, about THEIR post and problem:
+   - **Move 1, comment** (new lead): reply to their post with something useful on exactly what they said (a number, an example, the missing next step). No product, no link.
+   - **Move 2, free piece** (1-2 days later, ideally after they reacted): a short message or reply offering the free piece for their exact problem.
+   - **Move 3, DM** (after the free piece): refer to their post and problem, say you built the thing that solves the rest, end with a question they can answer "yes" to. No meeting asks.
+   - **Move 4, follow-ups**: day 2 "did you get a chance to try it? what did you think?" · day 5, if they liked it, the offer + price · a week later, if quiet, "still want me to set it up for you?"
+4. Output today's list: each message with the link to where it goes, ordered by score. Update `leads.md` stages and due dates once the user confirms what they sent.
+5. Once a week: show which searches and which messages produced paying customers, and suggest dropping the rest.
 
-## Step 7: follow-ups
-Give the exact messages:
-- Day 2 after the free thing or a "yes": "did you get a chance to try it? what did you think?"
-- Day 5, if they liked it: the offer from step 3.
-- One last check-in a week later, if they went quiet.
+Lead filter: real person (real name or photo, not all links, account older than a few months, not a bot, job board, giveaway or crypto account), active this week, post genuinely about the problem (not a joke, not someone selling their own tool).
+Every draft quotes or matches their exact words. Nothing they didn't say. No two leads get the same message.
 
-## Step 8: referrals
+## Step 6: referrals
 Give the message to send a week after someone pays: why did you buy, and who else do you know with this problem. Suggest a thank-you (a free month, an upgrade). Explain how to put the first answers on the sales page in the customers' words.
 
-## Step 9: the daily routine and the tracker
-- 30 minutes a day: 10 searching, 10 replying and sending DMs, 10 following up and posting.
-- Give a tracker as a simple table: name, where found, what was sent, date, replied, tried, paid, referred.
+## Step 7: the numbers
+- 30 minutes a day with the routine: 10 reviewing new people, 10 sending comments and free pieces, 10 sending DMs and follow-ups.
 - After 2 weeks: tell them to keep the searches and posts that produced paying customers and drop the rest.
 
 ## Rules
