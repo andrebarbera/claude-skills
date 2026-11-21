@@ -8,9 +8,10 @@ gets you your first paying customers, mainly from X. checks your product fits wh
 
 **install**
 
-1. download [`first-customers/SKILL.md`](first-customers/SKILL.md)
-2. put it in `~/.claude/skills/first-customers/SKILL.md`
-3. open claude code and say "get me my first customers for" + your product link + your X handle
+1. download the [`first-customers`](first-customers) folder (SKILL.md + scripts)
+2. put it in `~/.claude/skills/first-customers/`
+3. optional but recommended: add an X API Bearer Token (`export X_BEARER_TOKEN=...`) so it searches X on its own
+4. open claude code and say "get me my first customers for" + your product link + your X handle
 
 it never posts or DMs for you. you read everything and send it yourself
 

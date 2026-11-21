@@ -54,11 +54,12 @@ Create a folder `customers/` in the user's working directory with:
 - `profile.md`: product, one-line offer, price, risk reversal, the free piece, the buyers' top phrases from step 2, who they are, and 5 samples of how the user writes (ask them to paste 5 of their own posts or replies).
 - `searches.md`: the 10 searches from step 2 as links.
 - `leads.md`: a table: handle · post link · their words · score 1-10 · stage (found / commented / free sent / DM sent / follow-up 1 / follow-up 2 / paid / referred / dead) · next message due · notes.
+Offer the one-time setup that makes it run on its own: an X API Bearer Token (developer.x.com → app → Keys and tokens), saved with `export X_BEARER_TOKEN=...` in their shell profile. Without it the routine still works, it just needs them to open the search links.
 Tell the user: from now on, say **"run my customer routine"** every day.
 
 ## The daily customer routine (when the user says "run my customer routine")
 1. Read `customers/profile.md` and `customers/leads.md`.
-2. Run the searches (browse x.com search with `&f=live` if you can; otherwise give the links and ask the user to paste new posts). Add new people who pass the filter below, scored 1-10 with the reason in their words.
+2. Run the searches. Best: if `X_BEARER_TOKEN` is set, run `python3 <this skill folder>/scripts/xsearch.py "<search>" 25` for each search (fully automatic, ~$0.005 per post read on X's pay-per-use API). Otherwise browse x.com search with `&f=live` if you have a browser tool; as a last resort give the links and ask the user to paste new posts. Add new people who pass the filter below, scored 1-10 with the reason in their words.
 3. For every lead whose next message is due, draft the message for their stage, in the user's voice from the samples, about THEIR post and problem:
    - **Move 1, comment** (new lead): reply to their post with something useful on exactly what they said (a number, an example, the missing next step). No product, no link.
    - **Move 2, free piece** (1-2 days later, ideally after they reacted): a short message or reply offering the free piece for their exact problem.
