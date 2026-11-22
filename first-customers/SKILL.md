@@ -39,6 +39,14 @@ Then write `customers/profile.md`:
    `handle, followers, source_post, their_words, bio_fit, status, stage, next_action, next_action_due, history`
    Stages: `public-1 → public-2 → dm-resource → dm-needs → dm-offer → follow-up → won / lost`.
 
+
+## 1b. Check who already bought (every run)
+Plenty of people buy straight from the post or the free resource without ever talking to you, and the skill can't see that from replies alone. So before drafting anything:
+1. Ask the user once for their buyers: a Stripe customers export (CSV with email/name), their community or member list, or simply the X handles of people who paid. Save it as `customers/buyers.csv` and ask them to drop a fresh export in each week.
+2. Match every lead against it (X handle, name, or the email they gave). Anyone who already bought gets stage `won` and gets no sales message. If the user wants, draft a thank-you or an onboarding tip for them instead.
+3. Use it to get better: each week, compare who bought against how they were labelled. If people labelled cold keep buying, the buyer signals in profile.md are too strict, so update them. Report it in one line ("12 of this week's 40 buyers were labelled cold, loosening the fit rules").
+Labels are about where to spend your personal time, not a promise of who will pay: a lot of "send it" people buy on their own.
+
 ## 2. Public conversation first
 For every HOT and WARM lead (HOT first), draft a public reply under their comment that STARTS a conversation about their situation:
 - Respond to exactly what they said, add one useful thing (a specific tip, an example, a number), and end with one easy question about their case ("what's the dashboard for?", "is it the onboarding or the paywall?").
