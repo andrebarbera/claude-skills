@@ -33,6 +33,7 @@ Then write `customers/profile.md`:
    People are rarely explicit. Almost nobody writes "I want to buy this"; they write "super useful, I had this issue" or "send it". Judge from the reply AND the bio together, in seconds, no deep research:
    - **HOT:** fits the buyer (bio, what they build) AND hinted at the problem or asked anything about it, even casually ("I've been struggling with this", "how does it work?", "is it free?").
    - **WARM:** fits the buyer, but only reacted ("love this", "send it", "would love to try"). Most good leads start here: the public question in section 2 is how you find their need.
+   - **Comment-to-get posts are different** (the post asked people to comment a word to get something): everyone who commented the word raised their hand and is at least WARM, even if all they wrote is the word or "send it". Those are where most sales come from (Tobia, 22 Nov: most of 63 sales in 48h came from people who only commented the word). Bio fit makes them HOT. The job there is the follow-up after the freebie lands: check they got it, help them use it, then the offer.
    - **COLD:** no fit (bio unrelated, other sellers, bots, giveaway/crypto accounts).
    Write the reason in one line, quoting their words or bio.
 3. Add every HOT and WARM person to `customers/leads.csv` with the columns:
