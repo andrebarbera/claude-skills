@@ -30,16 +30,17 @@ Then write `customers/profile.md`:
 ## 1. Read and qualify the replies ("work my replies" + a post link)
 1. Pull everyone who replied: `python3 <skill folder>/scripts/xreplies.py <post link> 300` (or use pasted replies).
 2. For each person, read their reply AND their bio. Qualify them against profile.md, not in general:
-   - **HOT:** a clear buyer signal for THIS product in their reply or bio (they have the problem, are building what it's for, asked a real question about it, or asked how it works or what it costs).
-   - **WARM:** fits the buyer profile (bio, what they build) but didn't show a need yet ("would love to try", "send it").
-   - **COLD:** emoji or keyword only with no fit, bots, giveaway/crypto accounts, disqualifiers.
+   People are rarely explicit. Almost nobody writes "I want to buy this"; they write "super useful, I had this issue" or "send it". Judge from the reply AND the bio together, in seconds, no deep research:
+   - **HOT:** fits the buyer (bio, what they build) AND hinted at the problem or asked anything about it, even casually ("I've been struggling with this", "how does it work?", "is it free?").
+   - **WARM:** fits the buyer, but only reacted ("love this", "send it", "would love to try"). Most good leads start here: the public question in section 2 is how you find their need.
+   - **COLD:** no fit (bio unrelated, other sellers, bots, giveaway/crypto accounts).
    Write the reason in one line, quoting their words or bio.
 3. Add every HOT and WARM person to `customers/leads.csv` with the columns:
    `handle, followers, source_post, their_words, bio_fit, status, stage, next_action, next_action_due, history`
    Stages: `public-1 → public-2 → dm-resource → dm-needs → dm-offer → follow-up → won / lost`.
 
 ## 2. Public conversation first
-For every HOT lead (then WARM), draft a public reply under their comment that STARTS a conversation about their situation:
+For every HOT and WARM lead (HOT first), draft a public reply under their comment that STARTS a conversation about their situation:
 - Respond to exactly what they said, add one useful thing (a specific tip, an example, a number), and end with one easy question about their case ("what's the dashboard for?", "is it the onboarding or the paywall?").
 - Never "thanks!", "glad you liked it", "appreciate it". Never mention the product unless they asked about it directly. No links yet.
 - Keep the thread public while they're still sharing. Every answer goes into `history`.
@@ -56,6 +57,9 @@ Mark them `dm-resource` and draft the public line that opens the door ("sending 
 3. **dm-offer** (only once they've had real value and you know their need): connect their specific problem to the product: the resource gets them started, the product does the whole thing for their case. Give the incentive from profile.md, offer a choice between two options (e.g. monthly or lifetime) instead of yes/no, and answer their likely objection before they raise it.
 4. **follow-up:** never generic. Each follow-up adds something new and specific to them: a result from someone with the same problem, an answer to an objection they hinted at, a tip for their exact case, or the incentive's deadline. Space them 2, 4 and 7 days apart. After 3 without an answer, mark `lost` with the reason.
 5. When someone says no, ask once what was missing, and log it under Objections in profile.md.
+
+## Where it shows up
+Everything appears right in the Claude Code chat as a short to-do list for today (who, why, the message, where to send it), and in `customers/leads.csv`, which opens in Excel, Numbers or Google Sheets. It's proactive every time the user runs it: it says who to reply to now, who's ready to move to DMs, and whose follow-up is due. To make it fully hands-off, the user can schedule "run my customer routine" (e.g. Claude Code's /loop or a cron) to run after each post.
 
 ## 4. Daily routine ("run my customer routine")
 1. Run section 1 on every post of theirs from the last 48h (inbound first: warm leads beat cold ones).
