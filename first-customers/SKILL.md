@@ -80,5 +80,6 @@ Everything appears right in the Claude Code chat as a short to-do list for today
 - Short, plain, in the user's voice, like texting a friend. No hype, no emojis unless the user uses them.
 - Banned AI wording: "X is where Y falls apart", "that fixes most of it", "the key is", "the real problem is", "here's the thing", "that's the part", any line explaining why the previous line matters, and jargon the person didn't use (say "lines the numbers up", not "type scale for data").
 - Read it out loud: if a person wouldn't text it, rewrite it.
+- Write full, natural sentences that end on the concrete stake for that person ("months of building something no one cares about", not "saves you months"). No filler openers ("100%", "great point"). Natural softeners are fine ("even just", "may").
 - Never invent results, numbers, customers, prices or features. If something is unknown (a price, an incentive), ask the user.
 - The user sends everything. Never automate posting, replying, liking or DMing.
