@@ -4,7 +4,7 @@ free claude skills for builders who need users, by [@andrebarbera_](https://x.co
 
 ## first-customers
 
-turns people on X into paying customers. sorts everyone who engages with your posts into hot / warm / cold and drafts the DMs and follow-ups that convert them, and finds new buyers if you're small. checks your product fits what you're known for, researches your buyers in their own words, writes your offer and price, finds the people with the problem right now, drafts the reply and DM for each, plans your posts, follow-ups, referrals and a 30-minute daily routine
+turns the people engaging with your X posts into paying customers. it learns what you sell, qualifies everyone who replied against your product, keeps a lead sheet, and drafts every message: public replies that start real conversations, a DM that opens with something useful, the offer with an incentive, and specific follow-ups. finds new buyers too if you're small
 
 **install**
 
